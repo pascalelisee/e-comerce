@@ -1,0 +1,316 @@
+/*margin et padding c'est pour les bordure et les marge
+font c'est pour la police */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+/*Reset CSS*/
+nav{
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0%;
+    
+}
+/* c'est */
+.conteneur-nav{
+    position: absolute;
+    width: 100%;
+}
+/* c'est le bouton qui permet d'afficher et de cacher le menu */
+nav input[type=checkbox]{
+    display: none;
+}
+/* c'est pour le design du mobile nous avons donné une marge interne et une marge externe 
+et nous avons donné la couleur jaune pour notre menu donc 100% de l'ecrant du telephone 
+et 10px de la auteur */
+nav label{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    background-color:#38b6ff;
+}
+/*On va vouloir que le label occupe toute la largeur disponible
+ à l’écran. Pour cela, on lui appliquer un display : inline-block
+  et on lui passe une largeur égale à 100% de son élément conteneur. 
+  Par ailleurs, nous conservons les styles liés à l’élément nav de 
+  notre menu 
+*/
+
+/* ici nav ul sere a enlevé les puces se trouvant dans notre element ul
+de nove navigateiur et leui donné une couleur gri */
+nav ul{
+    display: none;
+    list-style-type: none;
+    background-color: #fb72d9;;
+}
+nav input[type=checkbox]:checked + ul{
+    display: flex;
+    flex-flow : column wrap;
+}
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+}
+nav > div > ul > li > a{
+    color: white;
+}
+/* nous avons utilisé cela pour enlevé le soulignement au niveau
+ et mettre la couleur  */
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 0px;
+}
+.sous{
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 1000;
+}
+
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    background-color: RGBa(200,200,200,0.8);
+}
+
+@media screen and (min-width: 980px){
+    .conteneur-nav{
+        position: static;
+    }
+    nav label, nav input{
+        display: none;
+    }
+    nav input[type=checkbox]:checked + ul, nav ul{
+        display: flex;
+        flex-flow: row wrap;
+        background-color: white;
+    }
+    nav ul li{
+        position: relative;
+    }
+    nav > div > ul > li > a{
+        color: black;
+    }
+    nav a{
+        border-bottom: 2px solid transparent;
+    }
+    /* cela nous a permis de que quand nous allons mettre le curseur sur les sous liste 
+    cela va apparaitre mais avec la couleur orange */
+    nav a:hover{
+        color: orange;
+        border-bottom: 2px solid gold;
+    }
+    .sous{
+        display: none;
+        box-shadow: 0px 1px 2px #CCC;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+    }
+    nav > div > ul li:hover .sous{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .sous a{
+        border-bottom: none;
+        background-color: white;
+    }
+    .sous a:hover{
+        border-bottom: none;
+        background-color: RGBa(200,200,200,0.1);
+    }
+    .deroulant > a::after{
+        content:" ▼";
+        font-size: 12px;
+    }
+/**.conteneur-contenu{
+  margin: 50px 20px;
+  height: 1500px;
+}*/
+
+
+    
+   /*ici c'est le hedeur */
+header{
+	width:100%;
+    height:99px;
+    background-color:#5ce1e6;
+	display:block;
+	margin:auto;
+    color:black;
+}   
+
+
+    /* c'est le dut du designe*/
+    .bbc{width: 427px;
+        height: 546;
+    }
+    *{
+        font-family: Avenir, sans-serif;
+      }
+      fieldset{
+        background-color: RGBa(240, 160, 0, 0.2);
+      }
+      legend{
+        font-weight: bold;
+      }
+      .champ{
+        margin-bottom: 10px;
+      }
+      textarea{
+        width: 40%;
+        height: 100px;
+      }
+      input{
+        width: 150px;
+      }
+      input[type="radio"], input[type="checkbox"]{
+        width: auto;
+      }
+      input[type="submit"]{
+        width: 100px;
+      }
+      /* tableau*/
+
+
+
+table{
+    caption-side: bottom;
+    
+  }
+  th, td{
+    border: 0px solid rgb(255, 255, 255);
+    padding: 10px;
+  }
+  
+  footer
+  
+  body{
+      margin: 0px;
+      padding: 0px;
+      width: 100px;
+  }
+/* ici nous avons choisi cette la classe D1 pour mieux sttructuré notre
+contenaire en lui donné la taille de 80% et une hauteur de 275px 
+pour la marge nous lui avons donée 50px */
+.d1{
+    width: 80%;
+    height: 275px;
+    margin: 50px auto;
+    box-shadow: 0px 15px 10px -5px #777;
+    background-color: #EDEDED;
+    background-size: contain;
+    animation: fondu 9s ease-in-out infinite both;
+}
+.conteneur{
+    max-width: 576px;
+    margin: 50px auto;
+}
+/*La règle @keyframes nous permis de définir les étapes qui composent la séquence de l'animation CSS.
+ Cela permet de contrôler une animation plus finement que ce qu'on pourrait obtenir avec les transitions.
+ et pour cela nous avons choisi le monde de deroulement de l'annimation 
+ nous avont choisi un mode fondu 
+ et pour faire l'annimation nous avons eu besoin de photosop pour
+ faire notre petit montage*/
+@keyframes fondu{
+    10%{background-image: url("promo1.jpg");background-repeat: no-repeat;}
+    25.33%{background-image: url("promotion2.jpg");background-repeat: no-repeat;}
+    64.67%{background-image: url("promo3.jpg");background-repeat: no-repeat;}
+    100%{background-image: url("promo4.jpg");background-repeat: no-repeat;}
+}
+
+/* c'est ici que nous avons mis la classe pour changé les couleur des
+prix et enlever le soulignement par defaut des liens */
+
+/* avec la classe a nous avons donné la couleur des prix en bleu*/
+.a{
+    color: #38b6ff;
+    text-decoration: none;
+}
+/* avec la classe c nous avons donné la couleur des ARTICLES en rose*/
+.c{
+    color: #fb72d9;
+    text-decoration: none;
+    
+}
+/* avec la classe d nous avons donné la couleur des liens 
+du footeur en blanc pour faire la difference */
+.d{
+    color:#ffffffff;
+    text-decoration: none;
+}
+    /* ici c'est le premier bouton d'enregistrement concernat le fprmulaire*/
+    button[type="submit"]
+    /* ici float a border raduis a permis de faire un rendu sur le cerré
+     et texte transformation c'est pour la transformation en majuscule
+     font weight c'est pour mettre en gras bold
+      il en va de meme avec le bouton annuler */
+    {
+    float: none;
+    padding: 10px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color:#38b6ff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    }
+    /* ici c'est le faite de faire passé la souris et que la 
+    couleur change  nous avons choisi la couleur verte pour 
+    pour montré la validation ou l'enregistrement du formulaire 
+     et pour le deuxieme boutonnous avons pris la couleur noire 
+     juste pour symbolisé l'annulation du formulaire ou l'annulation
+     de ce que l'on a ecrit sur le formulaire */
+
+    button[type="submit"]:hover{
+    box-shadow: #e0f809;
+    background-color: #17da27;
+    }
+
+button[type="reset"]
+{
+padding: 10px;
+font-size: 12px;
+color: #ffffff;
+background-color: #f60713;
+font-weight: bold;
+text-transform: uppercase;
+border-radius: 15px;
+}
+button[type="reset"]:hover{
+    box-shadow: #e0f809;
+    background-color: #000000;
+}
+.table{
+    background-color: #5ce1e6;
+}
+#section2{
+    background-color: #f0f0f0f0;
+}
+#section1{
+    background-color: #f0f0f0f0;
+}
+.c:hover{   
+    animation-duration: 3s;
+    animation-name: prix; 
+}
+@keyframes prix{
+    25% {
+        font-size: 50%;
+        margin-left: 0%;
+        width: 0%;
+      }
+    }
+#we{
+    margin: 25%;
+    padding: 10px;
+
+}
